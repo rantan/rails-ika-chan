@@ -29,8 +29,8 @@ module Lita
           message = pickup_judge(old_stock_count.to_i, current_stock_count)
 
           if message
-            send_message(response, message)
-            send_item(response, url: item[:url], title: item[:title], stock_count: current_stock_count)
+            send_item(response, message: message,
+                      url: item[:url], title: item[:title], stock_count: current_stock_count)
           end
           
           redis.set(id, current_stock_count)
@@ -44,12 +44,12 @@ module Lita
         robot.send_message(target, message)
       end
 
-      def send_item(response, url: , title: , stock_count:)
+      def send_item(response, message: , url: , title: , stock_count:)
         room = response.message.source.room
         room = Lita::Room.new(room) if room.is_a?(String)
         target = room || response.message.source.user
 
-        text = "#{stock_count}ストック！\n「<#{url}|#{title}>」"
+        text = "#{message}\n#{stock_count}ストック！\n「<#{url}|#{title}>」"
 
         attachment = Adapters::Slack::Attachment.new(text)
         robot.chat_service.send_attachment(target, attachment)
