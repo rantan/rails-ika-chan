@@ -30,7 +30,7 @@ Lita.configure do |config|
   #  20 : 関西弁キャラ
   #  30 : 赤ちゃんキャラ
   #  指定なし : デフォルトキャラ
-  config.handlers.talk.docomo_character_id = 20
+  # config.handlers.talk.docomo_character_id = 20
   # config.handlers.talk.docomo_character_id = [nil, 20, 30] # at random in array
 
   ## Example: Set configuration for any loaded handlers. See the handler's

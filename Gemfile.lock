@@ -1,3 +1,9 @@
+PATH
+  remote: lita-qiitapickup
+  specs:
+    lita-qiitapickup (0.1.0)
+      lita (>= 4.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,8 +85,9 @@ PLATFORMS
 DEPENDENCIES
   lita (~> 4.7.0)
   lita-dotenv (~> 0.9.0)
+  lita-qiitapickup!
   lita-slack (~> 1.7.2)
-  lita-talk
+  lita-talk (~> 0.1.5)
 
 BUNDLED WITH
    1.11.2
