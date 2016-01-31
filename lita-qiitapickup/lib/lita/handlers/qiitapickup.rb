@@ -77,8 +77,7 @@ module Lita
 
       # 指定したitemのストック数を返す。100を超える場合は100を返す。それ以上は数えない。
       def get_stock_count(item_id)
-        #client.list_item_stockers(item_id, {page: 1, per_page: 100}).body.count
-        11
+        client.list_item_stockers(item_id, {page: 1, per_page: 100}).body.count
       end
 
       def client
