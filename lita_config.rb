@@ -33,6 +33,8 @@ Lita.configure do |config|
   # config.handlers.talk.docomo_character_id = 20
   # config.handlers.talk.docomo_character_id = [nil, 20, 30] # at random in array
 
+  config.handlers.qiitapickup.qiita_access_token = ENV['QIITA_ACCESS_TOKEN']
+
   ## Example: Set configuration for any loaded handlers. See the handler's
   ## documentation for options.
   # config.handlers.some_handler.some_config_key = "value"
